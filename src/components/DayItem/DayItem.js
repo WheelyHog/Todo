@@ -12,7 +12,7 @@ function DayItem({day, tasks, deleteTask, deleteDay}) {
             </div>
             <div className={s.task_container}>
                 {tasks.map((elem, index) => {
-                    if(elem.day == day){
+                    if(elem.day === day){
                         return <Task id={elem.id} importance={elem.importance} description={elem.description} key={index} deleteTask={deleteTask}/>
                     }
                 })}
