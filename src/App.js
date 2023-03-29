@@ -11,7 +11,11 @@ function App() {
 
     const submit_form = event => {
         event.preventDefault()
+        console.log(event.target)
         let {day, importance, description} = event.target
+event.target.day.value = ''
+event.target.importance.value = ''
+event.target.description.value = ''
 
         const newTask = {
             id: Date.now(),
