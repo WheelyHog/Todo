@@ -13,9 +13,6 @@ function App() {
         event.preventDefault()
         console.log(event.target)
         let {day, importance, description} = event.target
-event.target.day.value = ''
-event.target.importance.value = ''
-event.target.description.value = ''
 
         const newTask = {
             id: Date.now(),
@@ -31,6 +28,10 @@ event.target.description.value = ''
         }
         days.sort((a, b) => a - b)
         setDays(days)
+
+        event.target.day.value = ''
+        event.target.importance.value = ''
+        event.target.description.value = ''
     }
 
     const deleteTask = (id) =>{
