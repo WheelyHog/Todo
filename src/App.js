@@ -11,7 +11,6 @@ function App() {
 
     const submit_form = event => {
         event.preventDefault()
-        console.log(event.target)
         let {day, importance, description} = event.target
 
         const newTask = {
@@ -20,7 +19,7 @@ function App() {
             importance: importance.value,
             description: description.value
         }
-        tasks = [...tasks, newTask].sort((a,b) => b.importance - a.importance)
+        tasks = [...tasks, newTask].sort((a, b) => b.importance - a.importance)
         setTasks(tasks)
 
         if (!days.includes(day.value)) {
@@ -34,11 +33,17 @@ function App() {
         event.target.description.value = ''
     }
 
-    const deleteTask = (id) =>{
-        console.log(id)
+    const deleteTask = (id) => {
         tasks = tasks.filter(elem => elem.id !== id)
         setTasks(tasks)
-        console.log(tasks)
+
+        const days = []
+        tasks.forEach(elem => {
+            if(!days.includes(elem.day)){
+                days.push(elem.day)
+            }
+        })
+        setDays([...days])
     }
 
     const deleteDay = (day) => {

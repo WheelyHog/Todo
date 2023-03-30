@@ -72,4 +72,10 @@ form button{
     height: 45px;
     width: 163px;
     color: #fff;
+    transition: background-color .5s;
+}
+
+form button:hover{
+    background-color: #e74c3c;
+    cursor: pointer;
 }

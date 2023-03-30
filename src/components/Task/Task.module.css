@@ -12,7 +12,7 @@
     cursor: pointer;
 }
 
-.task_item:hover .close_btn{
+.task_item:hover > .close_btn{
     opacity: 1;
 }
 
