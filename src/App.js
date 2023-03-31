@@ -52,10 +52,20 @@ function App() {
         setDays(days)
     }
 
+    const changeImportance =(id) => {
+        tasks = tasks.map(elem => {
+            if(elem.id === id){
+               elem.importance = elem.importance == '0' ? '1' : '0'
+            }
+            return elem
+        })
+        setTasks(tasks)
+    }
+
     return (
         <div className={s.container}>
             <Header submit_form={submit_form}/>
-            <Sheduler tasks={tasks} days={days} deleteTask={deleteTask} deleteDay={deleteDay}/>
+            <Sheduler tasks={tasks} days={days} deleteTask={deleteTask} deleteDay={deleteDay} changeImportance={changeImportance}/>
         </div>
     );
 }

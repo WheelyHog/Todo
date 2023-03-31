@@ -2,7 +2,7 @@ import React from 'react'
 import s from './DayItem.module.css'
 import Task from "../Task/Task";
 
-function DayItem({day, tasks, deleteTask, deleteDay}) {
+function DayItem({day, tasks, deleteTask, deleteDay, changeImportance}) {
 
     const week = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
     return (
@@ -13,7 +13,7 @@ function DayItem({day, tasks, deleteTask, deleteDay}) {
             <div className={s.task_container}>
                 {tasks.map((elem, index) => {
                     if(elem.day === day){
-                        return <Task id={elem.id} importance={elem.importance} description={elem.description} key={index} deleteTask={deleteTask}/>
+                        return <Task id={elem.id} importance={elem.importance} description={elem.description} key={index} deleteTask={deleteTask} changeImportance={changeImportance}/>
                     }
                 })}
             </div>
